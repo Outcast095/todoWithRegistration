@@ -1,0 +1,14 @@
+.TodoItem{
+    border: 2px solid #a69d9d;
+    background-color: #3C3F4F;
+    word-wrap: break-word;
+    border-radius: 15px;
+
+    text-align: center;
+    font-size: 25px;
+
+
+    padding: 25px 15px;
+    width: 500px;
+    margin-bottom: 25px;
+}

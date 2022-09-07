@@ -1,0 +1,33 @@
+.TodoStyle {
+    background-color: #232532;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: aliceblue;
+
+    padding: 338px 0 670px;
+}
+
+.InputArea{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #3C3F4F;
+    border: 2px solid #a69d9d;
+    border-radius: 15px;
+
+    width: 500px;
+    height: 170px;
+    margin-bottom: 25px;
+    padding: 25px 15px;
+}
+
+
+.UserNameTitle{
+    margin-bottom: 15px;
+}
+

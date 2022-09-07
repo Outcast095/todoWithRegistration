@@ -1,0 +1,14 @@
+.AuthorizationStyles {
+    margin: 0;
+    background-color: #232532;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 500px;
+    padding-bottom: 690px;
+    color: aliceblue;
+    font-size: 55px;
+
+
+}

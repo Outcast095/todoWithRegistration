@@ -1,22 +1,26 @@
 import React, {useState} from 'react';
+import { useForm } from "react-hook-form";
 import stile from "./Input.module.css"
 
 
 
-function Input({placeholder, enterTextHandler, value}) {
+function Input({placeholder, enterTextHandler, value, handleSubmit, onSubmitHandler, register, inputName}) {
 
 
-    const textChangeHandler = (event) => {
-        enterTextHandler(event.target.value)
-    }
 
     return (
-        <input
-            className={stile.InputStyle}
-            placeholder={placeholder}
-            onChange={textChangeHandler}
-            value={value}
-        />
+        <form onSubmit={handleSubmit(onSubmitHandler)}>
+            <input {...register(inputName,
+                {required: "поле объязательно для заполнения",
+                    maxLength: {
+                        value: 5,
+                        message: "слишком короткая строка"
+                    }
+                },
+
+            )}/>
+        </form>
+
     );
 }
 

@@ -26,16 +26,16 @@ function AppRoutes(props) {
 
     const { data = [] } = useGetUsersQuery()   // для получения данных из db.json
     const [createNewUser] = useCreateUserMutation()  // добавления нового пользователя
-    const [addTodo, {isError}] = useCreateNewTodoMutation() ///добавление нового todos
+    const [addTodo] = useCreateNewTodoMutation() ///добавление нового todos
 
     const {login, password, setLogin, setPassword} = useGetLoginAndPassword()   /// функция для получения данных из авторизационных и регистрационных input
 
-    const { FindUserFromData , userLogin, userPassword, user: userItem} = useFindUserFromData(login, password, setLogin, setPassword, data)
+    const { FindUserFromData } = useFindUserFromData(login, password, data)
     const {...registration} = useRegistration(login, password, setLogin, setPassword, createNewUser)  // функция для регистрации нового пользователя
-    const {...authorization} = useAuthorization(FindUserFromData(login, password, setLogin, setPassword, data), userItem); /// функция для входа на страницу пользователя
-    const {user, privatePage} = useCheckStorage(data) // функция проверяет LocalStorage и в случае если в нем что то есть, берет данные из него
+    const {authorizationPrivatePage, userObj, authorizationHandler} = useAuthorization(FindUserFromData); /// функция для входа на страницу пользователя
+    const {user, checkStoragePrivatePage} = useCheckStorage(data) // функция проверяет LocalStorage и в случае если в нем что то есть, берет данные из него
 
-    const { addNewTodo, todo, setTodo } = useAddNewTodo(addTodo, authorization.userItem || user)
+    //const { } = useAdd NewTodo(addTodo,  || user)
 
 
 
@@ -46,10 +46,9 @@ function AppRoutes(props) {
                 enterTextHandlerLogin={setLogin}
                 enterTextHandlerPassword={setPassword}
 
-                valueLogin={userLogin}
-                valuePassword={userPassword}
-
-                buttonClickHandler={authorization.authorizationHandler}
+               // valueLogin={}
+               // valuePassword={}
+                buttonClickHandler={authorizationHandler}
                 placeholderLogin="Введите логин"
                 placeholderPassword="Введите пароль"
                 title="АВТОРИЗАЦИЯ"
@@ -70,12 +69,12 @@ function AppRoutes(props) {
                 buttonText="зарегистрироваться"
             />}/>
             //////////////////////////////////UserTodo/////////////////////////////////////
-            <Route path="/:user" element={<PrivateHok privatePageKey={privatePage || authorization.privatePage}>
+            <Route path="/:user" element={<PrivateHok privatePageKey={checkStoragePrivatePage || authorizationPrivatePage}>
                 <UserTodo
-                    enterTextHandlerTodo={setTodo}
-                    buttonClickHandler={addNewTodo}
-                    valueTodo={todo}
-                    userPosts={user || authorization.userItem}
+                    //enterTextHandlerTodo={}
+                    //buttonClickHandler={}
+                    //valueTodo={todo}
+                   userPosts={user || userObj}
                     placeholder="Введите Todos"
                     buttonText="Ввод"
                 />

@@ -6,7 +6,7 @@
 
     color: aliceblue;
 
-    padding: 338px 0 670px;
+    padding: 338px 0 100px 0;
 }
 
 .InputArea{
@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     background-color: #3C3F4F;
     border: 2px solid #a69d9d;
@@ -29,5 +30,36 @@
 
 .UserNameTitle{
     margin-bottom: 15px;
+}
+
+.InputStyle{
+    height: 45px;
+    width: 380px;
+
+    margin-bottom: 15px;
+    border-radius: 5px;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    background-color: #232532;
+}
+
+.ButtonStyle{
+    background-color: rgba(254, 172, 13, 1);
+    box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+    border-radius: 3px;
+    border: 0;
+
+    width: 321px;
+    height: 48px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ButtonStyle:active {
+    background-color: rgb(183, 128, 18);
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
 

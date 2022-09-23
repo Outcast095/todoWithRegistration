@@ -1,27 +1,57 @@
 import styles from "./Authorization.module.css"
-import Input from "../input/Input";
-import Button from "../button/Button";
 import { Link } from "react-router-dom";
+import {useForm} from "react-hook-form";
+import stile from "../input/Input.module.css";
+
+
 
 
 
 function Authorization(props) {
+
+    const { register, handleSubmit, reset} = useForm({ mode: "onBlur"})
+
+
+    const onSubmitHandler = (data) => {
+        console.log(data)
+        props.enterTextHandler(data)
+        reset()
+    }
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.AuthorizationStyles}>
                 <div className={styles.inputArea}>
                     <h3 style={{color: "#d3cbcb"}}>{props.title}</h3>
-                    <Input
-                           placeholder={props.placeholderLogin}
-                           enterTextHandler={props.enterTextHandlerLogin}
-                           handleSubmit={props.handleSubmit}
-                           onSubmitHandler={props.onSubmitHandler}
-                           register={props.register}
-                           inputName={props.inputName}
-                    />
-                    <Input type="text" value={props.valuePassword} placeholder={props.placeholderLogin} enterTextHandler={props.enterTextHandlerPassword}/>
-                    <Button buttonText={props.buttonText} buttonClickHandler={props.buttonClickHandler}/>
+
+                    <form onSubmit={handleSubmit(onSubmitHandler)}>
+                        <input className={stile.InputStyle}
+                               {...register("userLogin",
+                                   {
+                                       required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
+                                       minLength: {
+                                           value: 5,
+                                           message: "слишком короткая строка"
+                                       },
+                                   }
+                               )}
+                               placeholder={props.placeholder}
+                        />
+
+                        <input className={stile.InputStyle}
+                               {...register("userPassword", {
+                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
+                                   minLength: {
+                                   value: 2,
+                                   message: "слишком короткая строка"
+                                   },
+                               })
+                             }
+                               placeholder={props.placeholder}
+                        />
+                        <input type="submit"/>
+                    </form>
+                    
                 </div>
                 <div>
                     {props.link
@@ -36,4 +66,5 @@ function Authorization(props) {
 }
 
 export default Authorization;
+
 

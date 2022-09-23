@@ -1,16 +1,9 @@
 
-import { useState } from "react";
-
-
 export default function useAddNewTodo ( addTodo, userItem ) {
 
-    const [todo, setTodo] = useState("")
-    console.log("useAddNewTodo", userItem)
-
-    const addNewTodo = () => {
-        console.log("click")
-        addTodo({...userItem, "todos": [...userItem.todos, {id: new Date().toISOString(), "textTodo": todo}]})
-        setTodo("")
+    function addNewTodo (newTodo) {
+        console.log(newTodo)
+        addTodo({...userItem, "todos": [...userItem.todos, {id: new Date().toISOString(), "textTodo": newTodo.userTodo}]})
     }
-    return {addNewTodo, todo, setTodo}
+    return { addNewTodo }
 }

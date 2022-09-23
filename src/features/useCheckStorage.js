@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 export default function useCheckStorage (data) {
 
     const navigate = useNavigate()
-    const [user, setUser] = useState(false)
-    const [checkStoragePrivatePage, setCheckStoragePrivatePage] = useState(false)
+    const [storageUserData, setStorageUserData] = useState(false)
+    const [checkStorageKey, setCheckStorageKey] = useState(false)
 
     let userData = localStorage.getItem("userData")
     let objectData = JSON.parse(userData)
@@ -15,10 +15,9 @@ export default function useCheckStorage (data) {
         if (objectData){
             data.find(item => {
                 if (item.user === objectData.log && String(item.password) === String(objectData.pass)){
-
                     navigate(`/${item.user}`)
-                    setCheckStoragePrivatePage(true)
-                    setUser(item)
+                    setCheckStorageKey(true)
+                    setStorageUserData(item)
                 } else {
                     console.log("LocalStorage не сработал")
                 }
@@ -26,5 +25,5 @@ export default function useCheckStorage (data) {
         }
     }, [data])
 
-    return {user, checkStoragePrivatePage}
+    return { storageUserData, checkStorageKey}
 }

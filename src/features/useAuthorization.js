@@ -1,26 +1,30 @@
-import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import {useMemo, useState} from "react";
 
 
-export default function useAuthorization (userItem) {
 
-    const navigate = useNavigate()
-    const [authorizationPrivatePage, setAuthorizationPrivatePage] = useState(false) /// для разблокировки приватной страницы
-    const [authorizeData, setAuthorizeData] = useState({}) /// для разблокировки приватной страницы
-    const [userObj, setUserObj] = useState({}) /// для разблокировки приватной страницы
+export default function useAuthorization (userObjectFromData = null) {
+
+     const [authorizationKey, setAuthorizationKey] = useState(false)
+     const navigate = useNavigate()
 
 
-    const authorizationHandler = () => {
-        let user = userItem()
-        setAuthorizationPrivatePage(true)
-        setAuthorizeData({log: user.user, pass: user.password})
-        localStorage.setItem("userData", JSON.stringify(authorizeData))
-        navigate(`/${user.user}`)
-        setUserObj(user)
+    function authorizationHandler (userItem) {
+         if (userItem !== null) {
+             localStorage.setItem("userData", JSON.stringify({log: userItem.user, pass: userItem.password}))
+             navigate(`/${userItem.user}`)
+             setAuthorizationKey(true)
+             return userItem
+         } else {
+             console.log("click")
+         }
     }
 
+    const userData = useMemo(() => authorizationHandler(userObjectFromData), [userObjectFromData])
 
-    return {authorizationPrivatePage, userObj, authorizationHandler}
+
+
+    return { userData, authorizationKey }
 }
 
 

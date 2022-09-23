@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 
 
 
-const {
+export const {
     register,
     formState: {
         errors
@@ -13,7 +13,7 @@ const {
     mode: "onBlur"
 })
 
-const onSubmitHandler = (data) => {
+export const onSubmitHandler = (data) => {
     console.log(data)
     reset()
 }

@@ -1,15 +1,22 @@
+import {useMemo, useState} from "react";
 
-export default function useFindUserFromData (userLogin = "", userPassword = "", dataQuery = false) {
 
-    console.log(userLogin)
-    console.log(userPassword)
+export default function useFindUserFromData (user = null, dataQuery = false) {
 
-    function FindUserFromData () {
-        console.log("сработало")
-            return  dataQuery.find(item  => item.user === userLogin && String(item.password) === String(userPassword))
 
+    function findUserFromData (userLogin, userPassword, dataQuery) {
+        return  dataQuery.find(item  => item.user === userLogin && String(item.password) === String(userPassword))
     }
 
-    return { FindUserFromData }
+
+
+    let userObjectFromData;
+
+    if (user !== null) {
+        userObjectFromData =  findUserFromData(user.userLogin, user.userPassword, dataQuery)
+    }
+
+
+    return { userObjectFromData }
 }
 

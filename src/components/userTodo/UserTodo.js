@@ -1,16 +1,31 @@
-import React from 'react';
 import style from "./UserTodo.module.css"
 import UserTodoItem from "./userTodoItem/UserTodoItem";
-import Input from "../input/Input";
-import Button from "../button/Button";
+import {useForm} from "react-hook-form";
 
 function UserTodo(props) {
+
+    const { register, handleSubmit, reset} = useForm({ mode: "onBlur"})
+
+    const onSubmitHandler = (data) => {
+       props.enterAddNewTodo(data)
+        reset()
+    }
+
     return (
         <div className={style.TodoStyle}>
-            <h2 className={style.UserNameTitle}>список ващих дел {props.username}</h2>
+            <h2 className={style.UserNameTitle}>список ващих дел {props.userPosts.user}</h2>
             <div className={style.InputArea}>
-                <Input value={props.valueTodo} type="text" placeholder={props.placeholder} enterTextHandler={props.enterTextHandlerTodo}/>
-                <Button buttonText={props.buttonText} buttonClickHandler={props.buttonClickHandler} />
+                <form onSubmit={handleSubmit(onSubmitHandler)}>
+                    <input className={style.InputStyle}
+                           {...register("userTodo",
+                               {
+                                   required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст,
+                               }
+                           )}
+                           placeholder={props.placeholder}
+                    />
+                    <input type="submit" className={style.ButtonStyle}/>
+                </form>
             </div>
             <div>{props.userPosts.todos.map(post => {
                         return <ul key={post.id}>

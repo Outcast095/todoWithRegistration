@@ -25,6 +25,43 @@
 
     width: 500px;
     height: 300px;
+    text-align: center;
+}
+
+.InputStyle{
+    height: 45px;
+    width: 380px;
+
+    margin-bottom: 15px;
+    border-radius: 5px;
+
+    color: rgba(253, 251, 251, 0.8);
+    font-size: 20px;
+    background-color: #232532;
+}
+
+.Title{
+    color: rgba(238, 232, 232, 0.8);
+}
+
+
+.ButtonStyle{
+    background-color: rgba(254, 172, 13, 1);
+    box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+    border-radius: 3px;
+    border: 0;
+
+    width: 321px;
+    height: 48px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ButtonStyle:active {
+    background-color: rgb(183, 128, 18);
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
 
 

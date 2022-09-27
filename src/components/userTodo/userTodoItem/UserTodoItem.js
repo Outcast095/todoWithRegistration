@@ -1,10 +1,12 @@
-import React from 'react';
-import style from "./UserTodoItem.module.css"
+import styles from "./UserTodoItem.module.css"
 
 function UserTodoItem(props) {
     return (
-        <li className={style.TodoItem}>
-            {props.post}
+        <li className={styles.TodoItem}>
+            <div className={styles.wrapper}>
+                <div>{props.post}</div>
+                <div className={styles.ButtonWrapper}><button className={styles.ButtonStyle}></button></div>
+            </div>
         </li>
     );
 }

@@ -30,8 +30,16 @@ export const usersApi = createApi({
             }),
             invalidatesTags: ["user"]
         }),
+        deleteTodo: build.mutation({
+            query: (user) => ({
+                url: `users/${user.id}`,
+                method: "PUT",
+                body: user
+            }),
+            invalidatesTags: ["user"]
+        }),
 
     })
 })
 
-export const { useGetUsersQuery, useCreateUserMutation, useCreateNewTodoMutation } = usersApi
+export const { useGetUsersQuery, useCreateUserMutation, useCreateNewTodoMutation, useDeleteTodoMutation } = usersApi

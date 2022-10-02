@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function useCheckStorage (data) {
+export default function useCheckStorage (data, deleteUserTodo) {
 
     const navigate = useNavigate()
     const [storageUserData, setStorageUserData] = useState(false)
@@ -18,12 +18,10 @@ export default function useCheckStorage (data) {
                     navigate(`/${item.user}`)
                     setCheckStorageKey(true)
                     setStorageUserData(item)
-                } else {
-                    console.log("LocalStorage не сработал")
                 }
             })
         }
-    }, [data])
+    }, [data, deleteUserTodo])
 
     return { storageUserData, checkStorageKey}
 }

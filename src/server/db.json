@@ -4,46 +4,19 @@
       "id": 1,
       "user": "Магомед",
       "password": 123,
+      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
       "todos": [
         {
-          "id": "2022-08-19T16:26:48.981Z",
-          "textTodo": "asdasdasd"
+          "id": "2022-10-02T14:11:19.180Z",
+          "textTodo": "Сливы"
         },
         {
-          "id": "2022-08-19T16:26:51.669Z",
-          "textTodo": "asdasd"
+          "id": "2022-10-02T14:22:32.885Z",
+          "textTodo": "мороженое "
         },
         {
-          "id": "2022-08-19T16:26:53.549Z",
-          "textTodo": "asdasd"
-        },
-        {
-          "id": "2022-08-22T15:37:19.924Z",
-          "textTodo": "sdfsdfsdf"
-        },
-        {
-          "id": "2022-08-22T15:37:24.444Z",
-          "textTodo": "dsfsdfsdf"
-        },
-        {
-          "id": "2022-09-06T13:30:29.539Z",
-          "textTodo": "sdf"
-        },
-        {
-          "id": "2022-09-23T14:27:12.564Z",
-          "textTodo": "sdfsdf"
-        },
-        {
-          "id": "2022-09-23T14:38:36.846Z",
-          "textTodo": "sfsdffgdffg"
-        },
-        {
-          "id": "2022-09-23T16:11:26.501Z",
-          "textTodo": "sdfsdf"
-        },
-        {
-          "id": "2022-09-27T12:24:20.113Z",
-          "textTodo": "Магомед"
+          "id": "2022-10-02T14:22:35.909Z",
+          "textTodo": "ромашка"
         }
       ]
     },
@@ -51,6 +24,7 @@
       "id": 2,
       "user": "Ахмед",
       "password": 234,
+      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
       "todos": [
         {
           "id": 1,
@@ -81,7 +55,33 @@
     {
       "user": "Ислам",
       "password": "789",
-      "todos": [],
+      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
+      "todos": [
+        {
+          "id": 1,
+          "textTodo": "купить Яблоки"
+        },
+        {
+          "id": 2,
+          "textTodo": "купить Груши"
+        },
+        {
+          "id": 3,
+          "textTodo": "купить Виноград"
+        },
+        {
+          "id": 4,
+          "textTodo": "купить Лимоны"
+        },
+        {
+          "id": "2022-08-22T15:38:47.548Z",
+          "textTodo": "sdfsdfsdf"
+        },
+        {
+          "id": "2022-08-22T16:09:20.987Z",
+          "textTodo": "dsdf"
+        }
+      ],
       "id": 3
     }
   ]

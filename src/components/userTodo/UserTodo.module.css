@@ -1,31 +1,35 @@
-.TodoStyle {
+
+
+.UserTodo {
     background-color: #232532;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-
     color: aliceblue;
-
-    padding: 338px 0 100px 0;
+    text-align: center;
 }
 
+.TodosList:last-child{
+    margin-bottom: 100px;
+}
+
+
 .InputArea{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
+    max-width: 500px;
     background-color: #3C3F4F;
     border: 2px solid #a69d9d;
     border-radius: 15px;
 
-    width: 500px;
-    height: 170px;
+    padding: 50px 15px;
     margin-bottom: 25px;
-    padding: 25px 15px;
+}
+
+.MainBlock{
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
 }
 
 
@@ -45,6 +49,8 @@
     background-color: #232532;
 }
 
+
+
 .ButtonStyle{
     background-color: rgba(254, 172, 13, 1);
     box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
@@ -56,39 +62,121 @@
     line-height: 25px;
     color: #fff;
     font-size: 25px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .ButtonStyle .active {
     background-color: rgb(183, 128, 18);
     box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
+/*==================================================================================*/
 
-
-.Burger{
-    position: fixed;
-    top: 30px;
-    left: 45px;
+.NavBarWrapper {
+  display: flex;
+  position: fixed;
+    z-index: 2;
+  top: 0;
+  left: -270px;
+  bottom: 0;
+  transition: left 1s ease 0s;
 }
 
-
-.Burger.active {
-    position: fixed;
-    top: 30px;
-    left: 380px;
-}
-
-
-.Sidebar{
-    width: 30%;
+.NavBarWrapperActive{
     min-height: 100vh;
-
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-
+    transition: left 1s ease 0s;
     background-color: #202341;
+    border-right: 2px solid #b6abab;
+}
+
+
+.BurgerWrapper {
+    position: relative;
+    top: 35px;
+    left: 35px;
+}
+
+
+.SideBarWrapper {
+    background-color: #3C3F4F;
+    padding-right: 15px;
+    width: 250px;
+}
+/*==================================================================================*/
+
+/*burger ============================================================*/
+
+
+.Burger_btn {
+    width: 35px;
+    height: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Burger_btn span,
+.Burger_btn:before,
+.Burger_btn:after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 1s ease 0s;
+    background-color: #b6abab;
+    border-radius: 2px;
+}
+
+.Burger_btn:before,
+.Burger_btn:after {
+    content: "";
+}
+
+.Burger_btn:before {
+    top: 0;
+}
+
+.Burger_btn:after {
+    bottom: 0;
+}
+
+
+.Burger_btn span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+}
+
+/*burger animation ===================================================================*/
+
+.Burger_btn.active:before {
+    top: 50%;
+    left: 0;
+    transition: all 1s ease 0s;
+    transform: rotate(-45deg) translate(2px, 0);
+}
+
+.Burger_btn.active:after{
+    bottom: 50%;
+    left: 0;
+    transition: all 1s ease 0s;
+    transform: rotate(45deg) translate(2px, 0);
+}
+
+.Burger_btn.active span {
+    left: 0;
+    transition: all 1s ease 0s;
+    transform: scale(0) translate(0px, 50%);
+}
+
+/*burger ============================================================*/
+
+
+
+.SideBar {
 }
 
 

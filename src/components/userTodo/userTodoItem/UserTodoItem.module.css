@@ -1,36 +1,60 @@
 .TodoItem{
-
-
+    max-width: 500px;
     border: 2px solid #a69d9d;
     background-color: #3C3F4F;
-    word-wrap: break-word;
     border-radius: 15px;
 
-    text-align: center;
     font-size: 25px;
+    padding: 10px 15px;
 
-
-    padding: 25px 15px;
-    width: 500px;
     margin-bottom: 25px;
 }
 
 .wrapper{
     display: flex;
-    justify-content: center;
 }
+
+.ButtonWrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.TodoItemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;
+    word-break: break-all;
+}
+
+.TodoItemText {
+    min-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.TrashIcon{
+    width: 25px;
+    height: 25px;
+}
+
+
+
+/* button ==========================================================================*/
 
 .ButtonStyle{
     background-color: rgba(254, 172, 13, 1);
     box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
-    border-radius: 3px;
+    border-radius: 15px;
     border: 0;
 
     width: 45px;
-    height: 48px;
+    height: 45px;
     line-height: 25px;
     color: #fff;
     font-size: 25px;
+    cursor: pointer;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -39,6 +63,4 @@
     box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
 
-.ButtonWrapper {
-    align-self: center;
-}
+/* button ==========================================================================*/

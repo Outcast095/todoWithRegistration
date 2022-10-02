@@ -15,8 +15,6 @@ export default function useAuthorization (userObjectFromData = null) {
              navigate(`/${userItem.user}`)
              setAuthorizationKey(true)
              return userItem
-         } else {
-             console.log("click")
          }
     }
 

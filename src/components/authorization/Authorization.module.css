@@ -41,10 +41,11 @@
 }
 
 .Title{
+    margin-bottom: 15px;
     color: rgba(238, 232, 232, 0.8);
 }
 
-
+/*========================================================================ButtonStyle*/
 .ButtonStyle{
     background-color: rgba(254, 172, 13, 1);
     box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
@@ -63,5 +64,8 @@
     background-color: rgb(183, 128, 18);
     box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
+
+/*========================================================================ButtonStyle*/
+
 
 

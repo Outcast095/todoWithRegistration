@@ -14,8 +14,8 @@ export default function useCheckStorage (data, deleteUserTodo) {
     useEffect(() => {
         if (objectData){
             data.find(item => {
-                if (item.user === objectData.log && String(item.password) === String(objectData.pass)){
-                    navigate(`/${item.user}`)
+                if (item.user === objectData.login && String(item.password) === String(objectData.pass)){
+                    navigate(`/${item.login}`)
                     setCheckStorageKey(true)
                     setStorageUserData(item)
                 }

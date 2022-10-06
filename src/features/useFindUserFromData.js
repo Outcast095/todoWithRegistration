@@ -5,7 +5,7 @@ export default function useFindUserFromData (user = null, dataQuery = false) {
 
 
     function findUserFromData (userLogin, userPassword, dataQuery) {
-        return  dataQuery.find(item  => item.user === userLogin && String(item.password) === String(userPassword))
+        return  dataQuery.find(item  => item.login === userLogin && String(item.password) === String(userPassword))
     }
 
 

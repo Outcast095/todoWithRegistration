@@ -2,27 +2,39 @@
   "users": [
     {
       "id": 1,
-      "user": "Магомед",
+      "login": "Магомед",
       "password": 123,
       "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
       "todos": [
         {
-          "id": "2022-10-02T14:11:19.180Z",
-          "textTodo": "Сливы"
-        },
-        {
-          "id": "2022-10-02T14:22:32.885Z",
-          "textTodo": "мороженое "
-        },
-        {
           "id": "2022-10-02T14:22:35.909Z",
           "textTodo": "ромашка"
+        },
+        {
+          "id": "2022-10-03T06:29:00.114Z",
+          "textTodo": "Огурцы"
+        },
+        {
+          "id": "2022-10-03T06:29:40.841Z",
+          "textTodo": "цветы "
+        },
+        {
+          "id": "2022-10-03T15:20:46.522Z",
+          "textTodo": "Бананы"
+        },
+        {
+          "id": "2022-10-06T12:30:41.832Z",
+          "textTodo": "sasdasd"
+        },
+        {
+          "id": "2022-10-06T12:32:16.768Z",
+          "textTodo": "asdasd"
         }
       ]
     },
     {
       "id": 2,
-      "user": "Ахмед",
+      "login": "Ахмед",
       "password": 234,
       "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
       "todos": [
@@ -53,22 +65,10 @@
       ]
     },
     {
-      "user": "Ислам",
+      "login": "Ислам",
       "password": "789",
       "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
       "todos": [
-        {
-          "id": 1,
-          "textTodo": "купить Яблоки"
-        },
-        {
-          "id": 2,
-          "textTodo": "купить Груши"
-        },
-        {
-          "id": 3,
-          "textTodo": "купить Виноград"
-        },
         {
           "id": 4,
           "textTodo": "купить Лимоны"

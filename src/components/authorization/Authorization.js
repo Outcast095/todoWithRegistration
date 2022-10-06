@@ -1,6 +1,13 @@
 import styles from "./Authorization.module.css"
+///////////////////////////////////////////////////////////////css
+
 import { Link } from "react-router-dom";
 import {useForm} from "react-hook-form";
+///////////////////////////////////////////////////////////////libraries
+
+
+import CheckBox from "./checkBox/checkBox";
+///////////////////////////////////////////////////////////////components
 
 
 
@@ -12,7 +19,6 @@ function Authorization(props) {
 
 
     const onSubmitHandler = (data) => {
-        console.log(data)
         props.enterTextHandler(data)
         reset()
     }
@@ -49,16 +55,18 @@ function Authorization(props) {
                                    placeholder={props.placeholder}
                             />
                         </div>
+                        {props.link ? "" : <CheckBox />}
                         <div>
                             <input type="submit" className={styles.ButtonStyle}/>
                         </div>
                     </form>
-                    
+
                 </div>
                 <div>
                     {props.link
                         ? <h2 style={{color: "#a49c9c"}}>зарегистрироваться можно
-                            {<Link style={{textDecoration: "none"}} to="registration"> здесь</Link> }</h2>
+                            {<Link style={{textDecoration: "none"}} to="registration"> здесь</Link> }
+                          </h2>
                         : ""}
                 </div>
             </div>

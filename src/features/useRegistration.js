@@ -1,23 +1,17 @@
 
 
-export default function useRegistration (inputLogin, inputPassword, changeUser, changePassword, createNewUser) {
+export default function useRegistration (createNewUser) {
 
 
-    const registrationHandler = () => {
-        if  (inputLogin && inputPassword) {
+    function registrationHandler (data) {
+
             createNewUser({
-                "user": inputLogin,
-                "password": inputPassword,
+                "user": "",
+                "password": "",
                 "todos": []
             })
-            changeUser("")
-            changePassword("")
-        } else {
-            console.log("вы не ввели регистрационные данные")
-        }
     }
 
-    return {registrationHandler, inputLogin, inputPassword}
+    return { registrationHandler }
 }
-
 

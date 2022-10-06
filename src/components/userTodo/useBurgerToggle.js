@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function useToggle (initialValue) {
+export default function useBurgerToggle (initialValue) {
     const [value, setValue] = useState(initialValue)
 
 

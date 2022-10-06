@@ -61,6 +61,7 @@
     height: 48px;
     line-height: 25px;
     color: #fff;
+    cursor: pointer;
     font-size: 25px;
 }
 
@@ -68,115 +69,6 @@
     background-color: rgb(183, 128, 18);
     box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
 }
-/*==================================================================================*/
 
-.NavBarWrapper {
-  display: flex;
-  position: fixed;
-    z-index: 2;
-  top: 0;
-  left: -270px;
-  bottom: 0;
-  transition: left 1s ease 0s;
-}
-
-.NavBarWrapperActive{
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    transition: left 1s ease 0s;
-    background-color: #202341;
-    border-right: 2px solid #b6abab;
-}
-
-
-.BurgerWrapper {
-    position: relative;
-    top: 35px;
-    left: 35px;
-}
-
-
-.SideBarWrapper {
-    background-color: #3C3F4F;
-    padding-right: 15px;
-    width: 250px;
-}
-/*==================================================================================*/
-
-/*burger ============================================================*/
-
-
-.Burger_btn {
-    width: 35px;
-    height: 20px;
-    cursor: pointer;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.Burger_btn span,
-.Burger_btn:before,
-.Burger_btn:after {
-    left: 0;
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    transition: all 1s ease 0s;
-    background-color: #b6abab;
-    border-radius: 2px;
-}
-
-.Burger_btn:before,
-.Burger_btn:after {
-    content: "";
-}
-
-.Burger_btn:before {
-    top: 0;
-}
-
-.Burger_btn:after {
-    bottom: 0;
-}
-
-
-.Burger_btn span {
-    top: 50%;
-    transform: scale(1) translate(0px, -50%);
-}
-
-/*burger animation ===================================================================*/
-
-.Burger_btn.active:before {
-    top: 50%;
-    left: 0;
-    transition: all 1s ease 0s;
-    transform: rotate(-45deg) translate(2px, 0);
-}
-
-.Burger_btn.active:after{
-    bottom: 50%;
-    left: 0;
-    transition: all 1s ease 0s;
-    transform: rotate(45deg) translate(2px, 0);
-}
-
-.Burger_btn.active span {
-    left: 0;
-    transition: all 1s ease 0s;
-    transform: scale(0) translate(0px, 50%);
-}
-
-/*burger ============================================================*/
-
-
-
-.SideBar {
-}
 
 

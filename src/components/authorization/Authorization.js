@@ -6,8 +6,11 @@ import {useForm} from "react-hook-form";
 ///////////////////////////////////////////////////////////////libraries
 
 
-import CheckBox from "./checkBox/checkBox";
 import useCheckerToggle from "./checkBox/useCheckerToggle";
+////////////////////////////////////////////////////////////customHooks
+
+import CheckBox from "./checkBox/checkBox";
+import ExtraUserData from "./ExtraUserData/ExtraUserData";
 ///////////////////////////////////////////////////////////////components
 
 
@@ -57,61 +60,11 @@ function Authorization(props) {
                                    placeholder={props.placeholderPassword}
                             />
                         </div>
-                        {props.link ? "" : <div>
+                        {props.link ? "" :
+                            <div>
                             <CheckBox toggle={toggle} value={value}/>
-                            {value ? <div className={value ? styles.ExtraBlock + " " + styles.ExtraBlockActive :styles.ExtraBlock}>
-                                <div>
-                                    <input className={styles.InputStyle}
-                                           {...register("userName",
-                                               {
-                                                   required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                                   minLength: {
-                                                       value: 5,
-                                                       message: "слишком короткая строка"
-                                                   },
-                                               }
-                                           )}
-                                           placeholder={"Введите свое имя"}
-                                    />
 
-                                    <input className={styles.InputStyle}
-                                           {...register("userSureName", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
-                                           placeholder={"Введите свою фамилию"}
-                                    />
-
-                                    <input type="tel" className={styles.InputStyle}
-                                           {...register("userPhoneNumber", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
-                                           placeholder={"Введите номер телефона"}
-                                    />
-
-                                    <input type="tel" className={styles.InputStyle}
-                                           {...register("userEmail", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
-                                           placeholder={"Введите эмаил"}
-                                    />
-
-                                </div>
-                            </div> : <div className={styles.ExtraBlock}></div>}
+                                <ExtraUserData value={value}/>
                         </div>}
                         <div>
                             <input type="submit" className={styles.ButtonStyle}/>

@@ -59,7 +59,7 @@ function Authorization(props) {
                         </div>
                         {props.link ? "" : <div>
                             <CheckBox toggle={toggle} value={value}/>
-                            {value ? <div>
+                            {value ? <div className={value ? styles.ExtraBlock + " " + styles.ExtraBlockActive :styles.ExtraBlock}>
                                 <div>
                                     <input className={styles.InputStyle}
                                            {...register("userName",
@@ -111,7 +111,7 @@ function Authorization(props) {
                                     />
 
                                 </div>
-                            </div> : ""}
+                            </div> : <div className={styles.ExtraBlock}></div>}
                         </div>}
                         <div>
                             <input type="submit" className={styles.ButtonStyle}/>

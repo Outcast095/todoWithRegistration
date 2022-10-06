@@ -4,7 +4,10 @@
       "id": 1,
       "login": "Магомед",
       "password": 123,
-      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
+      "name": "Магомед",
+      "sureName": "Карасаев",
+      "phoneNumber": "89640633066",
+      "email": "rostovmen95@gmail.com",
       "todos": [
         {
           "id": "2022-10-02T14:22:35.909Z",
@@ -21,14 +24,6 @@
         {
           "id": "2022-10-03T15:20:46.522Z",
           "textTodo": "Бананы"
-        },
-        {
-          "id": "2022-10-06T12:30:41.832Z",
-          "textTodo": "sasdasd"
-        },
-        {
-          "id": "2022-10-06T12:32:16.768Z",
-          "textTodo": "asdasd"
         }
       ]
     },
@@ -36,7 +31,10 @@
       "id": 2,
       "login": "Ахмед",
       "password": 234,
-      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
+      "name": "Ахмед",
+      "sureName": "Карасаев",
+      "phoneNumber": "89640633066",
+      "email": "Akhmed@gmail.com",
       "todos": [
         {
           "id": 1,
@@ -67,7 +65,10 @@
     {
       "login": "Ислам",
       "password": "789",
-      "photos": "../images/photos/superman-logo-E555F48FD9-seeklogo.com.png",
+      "name": "Ислам",
+      "sureName": "Карасаев",
+      "phoneNumber": "89640633066",
+      "email": "Akhmed@gmail.com",
       "todos": [
         {
           "id": 4,
@@ -83,6 +84,16 @@
         }
       ],
       "id": 3
+    },
+    {
+      "login": "Магомед321",
+      "password": "456",
+      "name": "Магомед",
+      "sureName": "Карасаев",
+      "phoneNumber": "89640633066",
+      "email": "Akhmed@gmail.com",
+      "todos": [],
+      "id": 4
     }
   ]
 }

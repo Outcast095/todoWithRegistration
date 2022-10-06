@@ -19,13 +19,7 @@
     transition: left 1s ease 0s;
     background-color: #202341;
     border-right: 2px solid #b6abab;
-}
-
-
-.BurgerWrapper {
-    position: relative;
-    top: 35px;
-    left: 35px;
+    z-index: 5;
 }
 
 
@@ -34,10 +28,30 @@
     padding-right: 15px;
     width: 250px;
 }
+
+.SideBar {
+    padding: 100px 10px 15px;
+}
+
+
+.UserDataContainer {
+    margin-bottom: 30px;
+}
+
+.ButtonContainer {
+
+}
+
+
 /*==================================================================================*/
 
 /*burger ============================================================*/
 
+.BurgerWrapper {
+    position: relative;
+    top: 35px;
+    left: 35px;
+}
 
 .Burger_btn {
     width: 35px;
@@ -103,8 +117,3 @@
 }
 
 /*burger ============================================================*/
-
-
-
-.SideBar {
-}

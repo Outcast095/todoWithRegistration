@@ -10,6 +10,7 @@ export default function useAuthorization (userObjectFromData = null) {
 
 
     function authorizationHandler (userItem) {
+        console.log("click")
          if (userItem !== null) {
              localStorage.setItem("userData", JSON.stringify({log: userItem.login, pass: userItem.password}))
              navigate(`/${userItem.login}`)

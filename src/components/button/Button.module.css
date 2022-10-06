@@ -4,12 +4,12 @@
     border-radius: 3px;
     border: 0;
 
-    width: 321px;
-    height: 48px;
+    max-width: 321px;
     line-height: 25px;
     color: #fff;
     font-size: 25px;
     font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
 }
 
 .ButtonStyle:active {

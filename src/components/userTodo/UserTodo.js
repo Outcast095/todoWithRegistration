@@ -4,7 +4,7 @@ import {useForm} from "react-hook-form";
 
 
 ////////////////////////////components/////////////////////////////////////////////////
-import NavBar from "./navBar/navBar";
+import NavBar from "./navBar/NavBar";
 import UserTodoItem from "./userTodoItem/UserTodoItem";
 
 function UserTodo(props) {

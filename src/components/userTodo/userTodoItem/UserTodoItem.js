@@ -2,7 +2,7 @@ import styles from "./UserTodoItem.module.css";
 import trash from "../../../images/icons/trash.svg";
 
 import {useRef} from "react";
-import useHover from "../../../Hook/useHover";
+import useHover from "./useHoverTodoItem";
 
 
 

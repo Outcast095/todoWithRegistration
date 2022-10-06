@@ -1,4 +1,5 @@
 import styles from "./NavBar.module.css";
+import buttonStyles from "../../button/Button.module.css"
 
 //////////////////////////customHooks/////////////////////////////////////////////////
 import useBurgerToggle from "../useBurgerToggle";
@@ -23,11 +24,15 @@ function NavBar(props) {
             <div className={styles.SideBarWrapper}>
                 <div className={styles.SideBar}>
                     <div>
-                        <h3>{props.user.login}</h3>
-                        <h3>{props.user.password}</h3>
+                        <div className={styles.UserDataContainer}>
+                            <h3>{props.user.name}</h3>
+                            <h3>{props.user.sureName}</h3>
+                            <h3>{props.user.phoneNumber}</h3>
+                            <h3>{props.user.email}</h3>
+                        </div>
 
-                        <div>
-                            <button onClick={LogOut}> Выйти из учетной записи</button>
+                        <div className={buttonStyles.ButtonContainer}>
+                            <button className={buttonStyles.ButtonStyle} onClick={LogOut}>Выйти из учетной записи</button>
                         </div>
                     </div>
                 </div>

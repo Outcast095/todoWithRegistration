@@ -1,30 +1,24 @@
 .wrapper{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    width: 100%;
 }
 
 .AuthorizationStyles {
+    min-height: 100vh;
     background-color: #232532;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    flex-grow: 1;
+    justify-content: center;
+    padding: 0 15px;
 }
 
 .inputArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 100px;
+    padding: 25px 100px 50px;
 
     background-color: #3C3F4F;
     border-radius: 15px;
 
-    width: 500px;
-    height: 300px;
+    max-width: 500px;
     text-align: center;
 }
 

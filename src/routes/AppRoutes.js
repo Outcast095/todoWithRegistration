@@ -33,7 +33,7 @@ function AppRoutes() {
     const {user, getLoginAndPassword } = useGetLoginAndPassword()   /// функция для получения данных из авторизационных и регистрационных input
     const { userObjectFromData } = useFindUserFromData(user, data)   /// функция сравнивает введенные пользователем логин и пароль с данным хранящимися в db.json и в случае совпадения отдает объект
     const { userData, authorizationKey } =  useAuthorization(userObjectFromData); /// функция для входа на страницу пользователя
-    const { registrationHandler, registrationKey } = useRegistration(createNewUser)  /// регистрация нового пользователя
+    const { registrationHandler, registrationCheck } = useRegistration(createNewUser, data)  /// регистрация нового пользователя
     const { storageUserData, checkStorageKey } = useCheckStorage(data) // функция проверяет LocalStorage и в случае если в нем что то есть, берет данные из него
 
 
@@ -54,6 +54,7 @@ function AppRoutes() {
             //////////////////////////////////Registration/////////////////////////////////////
             <Route
                 path="registration" element={<Authorization
+                registrationCheck={registrationCheck}
                 enterTextHandler={registrationHandler}
                 placeholderLogin="Введите логин для регистрации"
                 placeholderPassword="Введите пароль для регистрации"
@@ -61,7 +62,7 @@ function AppRoutes() {
                 buttonText="зарегистрироваться"
             />}/>
             //////////////////////////////////UserTodo/////////////////////////////////////
-            <Route path="/:user" element={<PrivateHok privatePageKey={authorizationKey || checkStorageKey || registrationKey}>
+            <Route path="/:user" element={<PrivateHok privatePageKey={authorizationKey || checkStorageKey}>
                 <UserTodo
                     enterAddNewTodo={addNewTodo}
                     deleteTodo={ deleteUserTodo }

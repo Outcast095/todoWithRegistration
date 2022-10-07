@@ -3,7 +3,7 @@
     {
       "id": 1,
       "login": "Магомед",
-      "password": 123,
+      "password": "123",
       "name": "Магомед",
       "sureName": "Карасаев",
       "phoneNumber": "89640633066",
@@ -30,7 +30,7 @@
     {
       "id": 2,
       "login": "Ахмед",
-      "password": 234,
+      "password": "234",
       "name": "Ахмед",
       "sureName": "Карасаев",
       "phoneNumber": "89640633066",
@@ -76,28 +76,23 @@
         },
         {
           "id": "2022-08-22T15:38:47.548Z",
-          "textTodo": "sdfsdfsdf"
+          "textTodo": "купить Лимоны"
         },
         {
           "id": "2022-08-22T16:09:20.987Z",
-          "textTodo": "dsdf"
+          "textTodo": "купить Лимоны"
         }
       ],
       "id": 3
     },
     {
-      "login": "Mansur",
-      "password": "123",
-      "name": "Moltis",
-      "sureName": "Kagermanov",
-      "phoneNumber": "89640633066",
-      "email": "Kagermanov95@gmail.com",
-      "todos": [
-        {
-          "id": "2022-10-07T06:07:36.218Z",
-          "textTodo": "Бананы"
-        }
-      ],
+      "login": "Магомед",
+      "password": "sdfsdf",
+      "name": "имя не введено",
+      "sureName": "фамилия не введена",
+      "phoneNumber": "номер телефона не введен",
+      "email": "Эмейл не введен",
+      "todos": [],
       "id": 4
     }
   ]

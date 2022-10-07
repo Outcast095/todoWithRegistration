@@ -10,8 +10,7 @@ import useCheckerToggle from "./checkBox/useCheckerToggle";
 ////////////////////////////////////////////////////////////customHooks
 
 import CheckBox from "./checkBox/checkBox";
-import ExtraUserData from "./ExtraUserData/ExtraUserData";
-import React from "react";
+import ModalWindow from "./ModalWindow/ModalWindow";
 ///////////////////////////////////////////////////////////////components
 
 
@@ -20,7 +19,7 @@ import React from "react";
 
 function Authorization(props) {
 
-    const { register, handleSubmit, reset} = useForm({ mode: "onBlur"})
+    const { register, handleSubmit, formState: {errors }, reset} = useForm({ mode: "onBlur"})
     const [value, toggle ] = useCheckerToggle(false)
 
 
@@ -40,26 +39,29 @@ function Authorization(props) {
                                    {...register("userLogin",
                                        {
                                            required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                           minLength: {
-                                               value: 5,
-                                               message: "слишком короткая строка"
-                                           },
+                                           minLength: { value: 5, message: "слишком короткая строка"},
                                        }
                                    )}
                                    placeholder={props.placeholderLogin}
                             />
 
+                            <div className={errors ? styles.InputErrors + " " + styles.InputErrorsActive : styles.InputErrors}>
+                            {errors?.userLogin && <p>{errors?.userLogin?.message || "поле ввода не заолнено...."}</p>}
+                            </div>
+
                             <input className={styles.InputStyle}
                                    {...register("userPassword", {
                                        required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                       minLength: {
-                                           value: 2,
-                                           message: "слишком короткая строка"
-                                       },
-                                   })
+                                       minLength: { value: 2, message: "слишком короткая строка"}
                                    }
+                                   )}
                                    placeholder={props.placeholderPassword}
                             />
+
+                            <div className={errors ? styles.InputErrors + " " + styles.InputErrorsActive : styles.InputErrors}>
+                                {errors?.userPassword && <p>{errors?.userPassword?.message || "поле ввода не заолнено...."}</p>}
+                            </div>
+
                         </div>
                         {props.link ? "" :
                             <div>
@@ -67,55 +69,24 @@ function Authorization(props) {
 
                                 <div className={value ? styles.ExtraBlock + " " + styles.ExtraBlockActive :styles.ExtraBlock}>
                                     <input className={styles.InputStyle}
-                                           {...register("userName",
-                                               {
-                                                   required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                                   minLength: {
-                                                       value: 5,
-                                                       message: "слишком короткая строка"
-                                                   },
-                                               }
-                                           )}
+                                           {...register("userName",)}
                                            placeholder={"Введите свое имя"}
                                     />
 
                                     <input className={styles.InputStyle}
-                                           {...register("userSureName", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
+                                           {...register("userSureName", )}
                                            placeholder={"Введите свою фамилию"}
                                     />
 
                                     <input type="tel" className={styles.InputStyle}
-                                           {...register("userPhoneNumber", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
+                                           {...register("userPhoneNumber", )}
                                            placeholder={"Введите номер телефона"}
                                     />
 
                                     <input type="tel" className={styles.InputStyle}
-                                           {...register("userEmail", {
-                                               required: "поле объязательно для заполнения",                           /// вместо труе мы можем записать текст
-                                               minLength: {
-                                                   value: 2,
-                                                   message: "слишком короткая строка"
-                                               },
-                                           })
-                                           }
+                                           {...register("userEmail", )}
                                            placeholder={"Введите эмаил"}
                                     />
-
-
                                 </div>
                         </div>}
 
@@ -133,6 +104,7 @@ function Authorization(props) {
                         : ""}
                 </div>
             </div>
+            {props.registrationCheck ? <ModalWindow/> : ""}
         </div>
 
     );

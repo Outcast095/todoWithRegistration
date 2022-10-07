@@ -87,12 +87,17 @@
     },
     {
       "login": "Магомед",
-      "password": "sdfsdf",
+      "password": "asdasdasd",
       "name": "имя не введено",
       "sureName": "фамилия не введена",
       "phoneNumber": "номер телефона не введен",
       "email": "Эмейл не введен",
-      "todos": [],
+      "todos": [
+        {
+          "id": "2022-10-07T17:26:24.400Z",
+          "textTodo": "Баклажаны "
+        }
+      ],
       "id": 4
     }
   ]

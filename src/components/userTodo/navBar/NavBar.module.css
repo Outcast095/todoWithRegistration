@@ -5,9 +5,10 @@
     position: fixed;
     z-index: 2;
     top: 0;
-    left: -270px;
+    left: -280px;
     bottom: 0;
     transition: left 1s ease 0s;
+    z-index: 10;
 }
 
 .NavBarWrapperActive{
@@ -19,27 +20,35 @@
     transition: left 1s ease 0s;
     background-color: #202341;
     border-right: 2px solid #b6abab;
-    z-index: 5;
+    z-index: 10;
 }
+
+.Wallpaper{
+    z-index: 4;
+}
+
+.WallpaperActive{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #520b29;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.1;
+    z-index: 4;
+}
+
 
 
 .SideBarWrapper {
+    padding: 100px 15px 15px;
     background-color: #3C3F4F;
-    padding-right: 15px;
     width: 250px;
 }
 
-.SideBar {
-    padding: 100px 10px 15px;
-}
-
-
 .UserDataContainer {
     margin-bottom: 30px;
-}
-
-.ButtonContainer {
-
 }
 
 

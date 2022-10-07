@@ -6,10 +6,12 @@ import {useForm} from "react-hook-form";
 ////////////////////////////components/////////////////////////////////////////////////
 import NavBar from "./navBar/NavBar";
 import UserTodoItem from "./userTodoItem/UserTodoItem";
+import useBurgerToggle from "./useBurgerToggle";
 
 function UserTodo(props) {
 
     const { register, handleSubmit, reset} = useForm({ mode: "onBlur"})
+    const [value, toggle] = useBurgerToggle()
 
     const onSubmitHandler = (data) => {
        props.enterAddNewTodo(data)
@@ -19,8 +21,9 @@ function UserTodo(props) {
     return (
             <div className={styles.UserTodo}>
                 <div>
-                    <NavBar user={props.user}/>
+                    <NavBar user={props.user} value={value} toggle={toggle}/>
                 </div>
+                <div onClick={toggle} className={ value ? styles.Wallpaper + " " + styles.WallpaperActive : styles.Wallpaper}></div>
                 <div className={styles.MainBlock}>
                     <h2 className={styles.UserNameTitle}>список ващих дел {props.user.login}</h2>
                     <div className={styles.InputArea}>

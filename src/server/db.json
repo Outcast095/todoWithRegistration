@@ -14,16 +14,16 @@
           "textTodo": "ромашка"
         },
         {
-          "id": "2022-10-03T06:29:00.114Z",
-          "textTodo": "Огурцы"
-        },
-        {
           "id": "2022-10-03T06:29:40.841Z",
           "textTodo": "цветы "
         },
         {
           "id": "2022-10-03T15:20:46.522Z",
           "textTodo": "Бананы"
+        },
+        {
+          "id": "2022-10-06T15:46:01.042Z",
+          "textTodo": "сникерсы "
         }
       ]
     },
@@ -86,13 +86,18 @@
       "id": 3
     },
     {
-      "login": "Магомед321",
-      "password": "456",
-      "name": "Магомед",
-      "sureName": "Карасаев",
+      "login": "Mansur",
+      "password": "123",
+      "name": "Moltis",
+      "sureName": "Kagermanov",
       "phoneNumber": "89640633066",
-      "email": "Akhmed@gmail.com",
-      "todos": [],
+      "email": "Kagermanov95@gmail.com",
+      "todos": [
+        {
+          "id": "2022-10-07T06:07:36.218Z",
+          "textTodo": "Бананы"
+        }
+      ],
       "id": 4
     }
   ]
